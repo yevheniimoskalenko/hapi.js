@@ -4,7 +4,8 @@
   "description": "first project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "eslint .",
+    "start": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,17 @@
   "homepage": "https://github.com/yevheniimoskalenko/hepi.js#readme",
   "dependencies": {
     "@hapi/hapi": "^20.0.0",
+    "axios": "^0.19.2",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "eslint": "^7.6.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5"
   }
 }

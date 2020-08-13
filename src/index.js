@@ -24,9 +24,8 @@ server.route({
 server.route({
     method: 'POST',
     path:'/login',
-    handler:(req, h)=>{
+    handler:(req, h) =>{
         const {login, password} = req.payload
-      
         if(login === person.login && password === person.password){
             const token = jwt.sign({
                 login,password
@@ -40,8 +39,17 @@ server.route({
 
     }
 })
-
-
+server.route({
+    method:'GET',
+    path: '/verefy',
+    handler: (request, h) => {
+        const {authorization} = request.headers
+       const token = authorization.replace('Bearer ', '')
+        const obj = jwt.verify(token, secret)
+        return {token: obj};
+    }
+    
+})
 
 await server.start();
 console.log('Server running on %s', server.info.uri);

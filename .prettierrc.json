@@ -1,0 +1,10 @@
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": ["eslint --fix", "prettier --write"]
+  }
+}
